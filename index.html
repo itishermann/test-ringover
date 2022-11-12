@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todolist</title>
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/card.css" />
+  <link rel="stylesheet" href="styles/form.css" />
+  <link rel="stylesheet" href="styles/loader.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Todolist</h1>
+    <div>
+      <form class="form" id="add-new-todo">
+        <h4 class="form__header">Add a new task</h4>
+        <div id="form__loader"></div>
+        <label for="label">Label</label>
+        <input class="form__input" type="text" id="label" name="label" placeholder="Title" required />
+        <label for="description">Description</label>
+        <textarea id="description" name="description" placeholder="Description" required
+          class="orm__textarea"></textarea>
+        <label for="start_date">Start date</label>
+        <input type="datetime-local" id="start_date" name="start_date" required class="form__date-input" />
+        <button type="submit" class="form__submit">Add</button>
+        <div id="form__status"></div>
+      </form>
+    </div>
+    <div id="tasks" class="card-grid">
+
+    </div>
+  </div>
+</body>
+<script type="module" src="js/main.js" async></script>
+
+</html>
