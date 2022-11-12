@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="styles/card.css" />
   <link rel="stylesheet" href="styles/form.css" />
   <link rel="stylesheet" href="styles/loader.css" />
+  <link rel="stylesheet" href="styles/filter.css" />
 </head>
 
 <body>
@@ -30,9 +31,13 @@
         <div id="form__status"></div>
       </form>
     </div>
-    <div id="tasks" class="card-grid">
-
+    <div class="filter">
+      <label for="filter-label">Filter by label</label>
+      <input type="text" id="filter-label" name="filter-label" placeholder="Filter by label" />
+      <label for="filter-date">Filter by start date</label>
+      <input type="date" id="filter-date" name="filter-date" />
     </div>
+    <div id="tasks" class="card-grid"></div>
   </div>
 </body>
 <script type="module" src="js/main.js" async></script>

@@ -1,0 +1,30 @@
+/*
+  Two inputs for filtering contained in a div
+  - One for filtering by label
+  - One for filtering by date
+*/
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter input {
+  width: 70%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin: 0 0.5rem;
+}
+
+.filter input:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.filter input[type="date"] {
+  width: auto;
+}

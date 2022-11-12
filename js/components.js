@@ -21,6 +21,10 @@ export const createTaskCard = (task) => {
   `;
   const card = document.createElement('div');
   card.classList.add('task-card', 'card_grid__item');
+  card.dataset.label = task.label;
+  card.dataset.end_date = task.end_date;
+  card.dataset.start_date = task.start_date;
+  card.dataset.description = task.description;
   card.appendChild(cardHeader);
   card.appendChild(cardBody);
   card.appendChild(cardActions);

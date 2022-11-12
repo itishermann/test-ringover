@@ -94,3 +94,7 @@
 .task-card:active {
   border: 1px solid #ccc;
 }
+
+.task-card--hidden {
+  display: none;
+}

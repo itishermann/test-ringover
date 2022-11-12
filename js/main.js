@@ -2,12 +2,17 @@ import TaskApi from './api.js';
 import { createTaskCard } from './components.js';
 
 function fetchTasks() {
-  TaskApi.getAllTasks().then(tasks => {
-    tasks.forEach(task => {
-      const card = createTaskCard(task);
-      document.querySelector('#tasks').appendChild(card);
+  TaskApi
+    .getAllTasks()
+    .then(tasks => {
+      tasks.forEach(task => {
+        const card = createTaskCard(task);
+        document.querySelector('#tasks').appendChild(card);
+      })
     })
-  });
+    .catch(err => {
+      alert('An error occurred while retrieving tasks');
+    });
 }
 
 function init() {
@@ -94,6 +99,35 @@ function init() {
         default:
           break;
       }
+    });
+
+  // Add event listener to filter inputs
+  document
+    .getElementById('filter-label')
+    .addEventListener("input", function (e) {
+      const label = e.target.value;
+      const cards = document.querySelectorAll('.task-card');
+      cards.forEach(card => {
+        if (card.dataset.label.includes(label) || label === '') {
+          card.classList.remove('task-card--hidden');
+        } else {
+          card.classList.add('task-card--hidden');
+        }
+      })
+    }
+    );
+  document
+    .getElementById('filter-date')
+    .addEventListener("input", function (e) {
+      const date = e.target.value;
+      const cards = document.querySelectorAll('.task-card');
+      cards.forEach(card => {
+        if (new Date(card.dataset.start_date).toDateString() === new Date(date).toDateString() || !date) {
+          card.classList.remove('task-card--hidden');
+        } else {
+          card.classList.add('task-card--hidden');
+        }
+      })
     });
 }
 
